@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: #e2e8f0;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #090d16;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Text selection with restrained emerald accent */
+  ::selection {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+}
+
+/* ===================================================
+   FINORA TRANSLUCENT MATERIAL HIERARCHY (ELEVATED CONTRAST)
+   =================================================== */
+
+/* Level 1: Metric cards, summary cards, goal cards, recurring summary cards */
+.surface-l1 {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(203, 213, 225, 0.88);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.surface-l1:hover {
+  background-color: rgba(255, 255, 255, 0.82);
+  border-color: rgba(148, 163, 184, 0.95);
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Level 2: Large chart containers, category panels, analytics panels, budget panels */
+.surface-l2 {
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(203, 213, 225, 0.90);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.surface-l2:hover {
+  background-color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(148, 163, 184, 0.95);
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Level 3: Transaction tables, search/filter containers, dense information areas, settings sections */
+.surface-l3 {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.surface-l3:hover {
+  border-color: rgba(100, 116, 139, 0.90);
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Level 4: Structural surfaces (sidebar, navigation headers, dropdowns) */
+.surface-l4 {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(203, 213, 225, 0.95);
+}
+
+/* ===================================================
+   PHYSICAL CLICK & TACTILE MOTION SYSTEM
+   =================================================== */
+
+.tactile-btn,
+.interactive-btn {
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 150ms ease,
+              border-color 150ms ease,
+              box-shadow 150ms ease;
+  user-select: none;
+}
+.tactile-btn:active,
+.interactive-btn:active {
+  transform: scale(0.975) translateY(0.5px);
+}
+
+.tactile-card,
+.interactive-card {
+  cursor: pointer;
+  user-select: none;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 220ms ease,
+              border-color 220ms ease,
+              box-shadow 220ms ease;
+}
+.tactile-card:hover {
+  transform: translateY(-1px);
+}
+.tactile-card:active,
+.interactive-card:active {
+  transform: scale(0.994) translateY(0);
+}
+
+.tactile-row {
+  transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tactile-row:hover {
+  background-color: rgba(248, 250, 252, 0.75);
+}
+
+.tactile-status {
+  transition: transform 140ms ease-out, border-color 140ms ease-out;
+}
+.tactile-status:hover {
+  transform: scale(1.02);
+}
+
+/* ===================================================
+   5-TIER COORDINATED PAGE ENTRY CASCADE
+   Phase 3: Header (Title)
+   Phase 4: Supporting (Subtitle, Controls, Badges)
+   Phase 5: Primary (KPI Metric Cards)
+   Phase 6: Main (Charts, Tables, Primary Panels)
+   Phase 7: Secondary (Auxiliary Lists, Targets)
+   =================================================== */
+
+@keyframes cascadeSettle {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.motion-header {
+  animation: cascadeSettle 280ms cubic-bezier(0.16, 1, 0.3, 1) 40ms both;
+  will-change: opacity, transform;
+}
+
+.motion-supporting {
+  animation: cascadeSettle 260ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both;
+  will-change: opacity, transform;
+}
+
+.motion-primary {
+  animation: cascadeSettle 320ms cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
+  will-change: opacity, transform;
+}
+
+.motion-main {
+  animation: cascadeSettle 360ms cubic-bezier(0.16, 1, 0.3, 1) 240ms both;
+  will-change: opacity, transform;
+}
+
+.motion-secondary {
+  animation: cascadeSettle 380ms cubic-bezier(0.16, 1, 0.3, 1) 320ms both;
+  will-change: opacity, transform;
+}
+
+/* Backwards-compatible page transition wrapper */
+.page-transition-enter {
+  animation: cascadeSettle 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
+}
+
+/* ===================================================
+   SPATIAL DRAWER & MODAL MOTION
+   =================================================== */
+
+@keyframes drawerSlideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawerSlideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes modalPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-drawer-in {
+  animation: drawerSlideIn 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-drawer-out {
+  animation: drawerSlideOut 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-in {
+  animation: modalPopIn 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-backdrop-in {
+  animation: backdropFadeIn 200ms ease-out forwards;
+}
+
+/* ===================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   =================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-enter,
+  .motion-header,
+  .motion-supporting,
+  .motion-primary,
+  .motion-main,
+  .motion-secondary,
+  .animate-drawer-in,
+  .animate-drawer-out,
+  .animate-modal-in,
+  .animate-backdrop-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .surface-l1,
+  .surface-l2,
+  .surface-l3,
+  .surface-l4,
+  .interactive-card,
+  .tactile-card,
+  .interactive-btn,
+  .tactile-btn,
+  .tactile-row,
+  .tactile-status {
+    transition: none !important;
+  }
+  .interactive-card:active,
+  .tactile-card:active,
+  .interactive-btn:active,
+  .tactile-btn:active,
+  .tactile-card:hover {
+    transform: none !important;
+  }
+}
+
+/* Subtle clean scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
