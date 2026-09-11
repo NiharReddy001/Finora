@@ -8,8 +8,8 @@ import {
 } from '@/types/finance';
 
 export const INITIAL_USER: UserProfile = {
-  name: 'Your Finances',
-  email: 'workspace@finora.internal',
+  name: 'Primary Treasury',
+  email: 'treasury@finora.internal',
 };
 
 export const CATEGORY_COLORS: Record<ExpenseCategory, string> = {
@@ -51,7 +51,7 @@ export const INITIAL_TRANSACTIONS: Transaction[] = [
   },
   {
     id: 'tx-sep-02',
-    merchant: 'Acme Corp (Salary)',
+    merchant: 'Enterprise Systems (Compensation)',
     amount: 115000,
     category: 'Salary',
     date: '2026-09-01',
@@ -383,13 +383,13 @@ export const INITIAL_TRANSACTIONS: Transaction[] = [
   },
   {
     id: 'tx-aug-02',
-    merchant: 'Acme Corp (Salary)',
+    merchant: 'Enterprise Systems (Compensation)',
     amount: 115000,
     category: 'Salary',
     date: '2026-08-01',
     type: 'income',
     paymentMethod: 'Net Banking',
-    notes: 'August Salary',
+    notes: 'August executive compensation',
     account: 'HDFC Savings',
   },
   {

@@ -109,7 +109,7 @@ export function FinanceProvider({ children }: { children: React.ReactNode }) {
   const [dateRange, setDateRange] = useState<DateRangeOption>('30D');
   const [currency, setCurrency] = useState<string>('INR');
   const [dateFormat, setDateFormat] = useState<string>('DD/MM/YYYY');
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   // Modal / Drawer state
   const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);

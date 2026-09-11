@@ -11,9 +11,9 @@ import {
   Target,
   Repeat,
   Settings,
-  TrendingUp,
 } from 'lucide-react';
 import { useFinance } from '@/context/FinanceContext';
+import { FinoraBrandMark } from '@/components/brand/FinoraBrandMark';
 
 const NAV_ITEMS = [
   { label: 'Overview', href: '/', icon: LayoutDashboard },
@@ -108,14 +108,16 @@ export default function Sidebar() {
       {/* Brand Header */}
       <div className="h-16 flex items-center px-6 border-b border-slate-200/80">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 transition-all duration-200 group-hover:scale-105 group-hover:bg-emerald-100/80">
-            <TrendingUp className="w-4 h-4" />
-          </div>
+          <FinoraBrandMark
+            size={32}
+            variant="badge-emerald"
+            className="transition-transform duration-200 group-hover:scale-105"
+          />
           <div className="flex flex-col">
-            <span className="font-semibold tracking-tight text-slate-900 text-base">
+            <span className="font-bold tracking-tight text-slate-950 text-[15px] leading-none">
               Finora
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
+            <span className="text-[9.5px] uppercase tracking-[0.14em] text-emerald-700 font-semibold mt-1 leading-none">
               Finance Intelligence
             </span>
           </div>
@@ -193,15 +195,15 @@ export default function Sidebar() {
             href="/settings"
             className="tactile-card flex items-center gap-3 p-2.5 rounded-lg bg-white/40 hover:bg-white/80 border border-slate-200/70 hover:border-slate-300/80 transition-all duration-200 group shadow-2xs"
           >
-            <div className="w-8 h-8 rounded-lg bg-emerald-50/90 border border-emerald-200/80 text-emerald-700 font-semibold text-xs flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
-              <TrendingUp className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400 font-bold text-xs flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 tracking-wider">
+              PT
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-xs font-semibold text-slate-950 truncate">
-                {user.name || 'Your Finances'}
+                {user.name || 'Primary Treasury'}
               </p>
               <p className="text-[11px] text-slate-500 font-medium truncate">
-                Personal Workspace
+                Finora Workspace
               </p>
             </div>
           </Link>

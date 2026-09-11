@@ -31,11 +31,11 @@ export default function SettingsPage() {
     <div className="space-y-6 sm:space-y-8 max-w-4xl">
       {/* Header */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 motion-header">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 motion-header">
           Settings
         </h1>
-        <p className="text-sm text-slate-500 mt-1 motion-supporting">
-          Manage your account profile, regional currency preferences, and appearance.
+        <p className="text-sm text-slate-600 mt-1 motion-supporting font-medium">
+          Configure workspace identity, regional currency, and interface appearance.
         </p>
       </div>
 

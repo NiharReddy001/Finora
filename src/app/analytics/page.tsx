@@ -69,19 +69,19 @@ export default function AnalyticsPage() {
     <div className="space-y-6 sm:space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 motion-header">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 motion-header">
           Financial Analytics
         </h1>
-        <p className="text-sm text-slate-500 mt-1 motion-supporting">
+        <p className="text-sm text-slate-600 mt-1 motion-supporting font-medium">
           Cash flow trends, spending distributions, and algorithmic insights.
         </p>
       </div>
 
       {/* Dynamic Financial Insights */}
-      <div className="surface-l2 rounded-xl p-5 motion-primary">
+      <div className="surface-l2 rounded-xl p-5 border border-slate-200/90 shadow-xs motion-primary">
         <div className="flex items-center gap-2 mb-4">
           <Sparkles className="w-4 h-4 text-emerald-600" />
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-600">
             Automated Insights
           </h3>
         </div>

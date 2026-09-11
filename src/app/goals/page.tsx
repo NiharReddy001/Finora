@@ -87,11 +87,11 @@ export default function GoalsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 motion-header">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 motion-header">
             Savings Goals
           </h1>
-          <p className="text-sm text-slate-500 mt-1 motion-supporting">
-            Track progress towards your financial milestones and savings targets.
+          <p className="text-sm text-slate-600 mt-1 motion-supporting font-medium">
+            Track progress towards capital reserve targets and financial milestones.
           </p>
         </div>
         <button

@@ -13,9 +13,9 @@ import {
   Target,
   Repeat,
   Settings,
-  TrendingUp,
 } from 'lucide-react';
 import { useFinance } from '@/context/FinanceContext';
+import { FinoraBrandMark } from '@/components/brand/FinoraBrandMark';
 
 const NAV_ITEMS = [
   { label: 'Overview', href: '/', icon: LayoutDashboard },
@@ -46,10 +46,8 @@ export default function MobileNav() {
       {/* Mobile Top Header */}
       <header className="h-14 surface-l4 border-b border-slate-200/80 flex items-center justify-between px-4 sticky top-0 z-20">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-md bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
-            <TrendingUp className="w-4 h-4" />
-          </div>
-          <span className="font-semibold tracking-tight text-slate-900 text-sm">
+          <FinoraBrandMark size={28} variant="badge-emerald" />
+          <span className="font-bold tracking-tight text-slate-950 text-base">
             Finora
           </span>
         </Link>
@@ -74,12 +72,15 @@ export default function MobileNav() {
           <div className="relative flex-1 flex flex-col max-w-xs w-full surface-l4 border-r border-slate-200/80 p-5 z-50 shadow-2xl animate-drawer-in">
             <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-md bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
-                  <TrendingUp className="w-4 h-4" />
+                <FinoraBrandMark size={28} variant="badge-emerald" />
+                <div className="flex flex-col">
+                  <span className="font-bold tracking-tight text-slate-950 text-base leading-none">
+                    Finora
+                  </span>
+                  <span className="text-[9px] uppercase tracking-[0.12em] text-emerald-700 font-semibold mt-0.5 leading-none">
+                    Finance Intelligence
+                  </span>
                 </div>
-                <span className="font-semibold text-slate-900 text-sm">
-                  Finora
-                </span>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
@@ -125,15 +126,15 @@ export default function MobileNav() {
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-3 p-2 rounded-lg bg-slate-50 border border-slate-200"
               >
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 text-emerald-700 text-xs font-semibold flex items-center justify-center">
-                  <TrendingUp className="w-4 h-4" />
+                <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0 tracking-wider">
+                  PT
                 </div>
                 <div className="truncate">
-                  <p className="text-xs font-semibold text-slate-900 truncate">
-                    {user.name || 'Your Finances'}
+                  <p className="text-xs font-semibold text-slate-950 truncate">
+                    {user.name || 'Primary Treasury'}
                   </p>
-                  <p className="text-[11px] text-slate-500 truncate">
-                    Personal Workspace
+                  <p className="text-[11px] text-slate-500 font-medium truncate">
+                    Finora Workspace
                   </p>
                 </div>
               </Link>

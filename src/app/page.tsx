@@ -28,7 +28,7 @@ export default function OverviewPage() {
       case '1Y':
         return "Annual fiscal overview (trailing 365 days)";
       default:
-        return "Consolidated personal financial intelligence.";
+        return "Consolidated financial intelligence & capital flow.";
     }
   };
 

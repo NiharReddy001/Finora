@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="finora-touch-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <!-- Apple Touch Squircle Container -->
+  <rect width="180" height="180" rx="40" fill="url(#finora-touch-bg)"/>
+  <rect x="2" y="2" width="176" height="176" rx="38" fill="none" stroke="#34d399" stroke-opacity="0.3" stroke-width="2"/>
+  <!-- Scaled Finora Precision Mark -->
+  <g transform="translate(18, 18) scale(4.5)">
+    <!-- Top Horizon Blade -->
+    <path d="M7 7.5C7 5.84315 8.34315 4.5 10 4.5H21C22.1935 4.5 23.338 4.97411 24.182 5.81802L25.682 7.31802C26.3124 7.94845 25.8662 9.25 24.9758 9.25H10C8.34315 9.25 7 7.90685 7 6.25V7.5Z" fill="#ffffff"/>
+    <!-- Lower Wing & Stability Spine -->
+    <path d="M7 14C7 12.8954 7.89543 12 9 12H17C18.1935 12 19.338 12.4741 20.182 13.318L21.182 14.318C21.8124 14.9485 21.3662 16.25 20.4758 16.25H12V24.5C12 25.8807 10.8807 27 9.5 27C8.11929 27 7 25.8807 7 24.5V14Z" fill="#ffffff" fill-opacity="0.95"/>
+  </g>
+</svg>
